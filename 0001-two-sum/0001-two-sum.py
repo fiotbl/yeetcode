@@ -5,6 +5,4 @@ class Solution:
         for i in range(len(nums)):
             remainder = target - nums[i]
             if remainder in d and d[remainder]!=i:
-                res = []
-                res.extend([i, d[remainder]]) 
-                return res
+                return [i, d[remainder]]
