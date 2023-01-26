@@ -6,11 +6,8 @@ class Solution:
         
         while b < len(prices):
             diff = prices[b] - prices[a]
-            print(diff)
-            if diff > 0 and diff > res:
+            if diff > res:
                 res = diff
-
-                # print(res)
             elif prices[b] < prices[a]:
                 a = b
             b += 1
