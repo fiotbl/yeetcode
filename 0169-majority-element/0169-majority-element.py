@@ -1,5 +1,12 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        numsDict = {e:nums.count(e) for e in set(nums)}
+        count, res = 0, 0
         
-        return max(numsDict, key = numsDict.get)
+        for n in nums:
+            if n!= res and count > 0: 
+                count -= 1
+            elif n != res and count == 0: 
+                res = n
+            else: count += 1
+                
+        return res
