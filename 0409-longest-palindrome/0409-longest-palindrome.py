@@ -5,13 +5,9 @@ class Solution:
         
         for letter in sDict:
             if sDict[letter]>=2:
-                while sDict[letter]>1:
-                    count += 2
-                    sDict[letter] -= 2
+                count += 2*(sDict[letter]//2)
+                sDict[letter] = sDict[letter] % 2
         
-        for letter in sDict:
-            if sDict[letter]==1:
-                count += 1
-                break
+        if 1 in sDict.values(): count+=1
                 
         return count
