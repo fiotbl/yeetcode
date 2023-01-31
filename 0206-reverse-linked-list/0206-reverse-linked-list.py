@@ -11,7 +11,6 @@ class Solution:
             temp = head
             head = head.next
             temp.next = prev
-            
             prev = temp
         
         return prev
