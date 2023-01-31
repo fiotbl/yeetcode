@@ -8,11 +8,9 @@ class Solution:
         
         while l<=r:
             mid = (l+r) // 2
-            print(mid)
             if isBadVersion(mid):
                 r = mid-1
                 badVer = mid
-                print(badVer)
             else:
                 l=mid+1
                 
