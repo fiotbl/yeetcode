@@ -22,8 +22,6 @@ class Solution:
                 carry = True
                 res.append(1)
             else: res.append(bitsum)
-            print(res) 
-        
-        if carry: res.append(1)
-        ans = res[::-1]     
-        return "".join(str(a) for a in ans)
+                
+        if carry: res.append(1) 
+        return "".join(str(a) for a in res[::-1] )
