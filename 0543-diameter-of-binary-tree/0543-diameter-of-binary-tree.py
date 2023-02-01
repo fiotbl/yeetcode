@@ -9,9 +9,9 @@ class Solution:
         res = 0
         
         def dfs(root):
-            if not root: return 0 # return -1 for height if there is no node
+            if not root: return 0 # return 0 for height if there is no node
             left, right = dfs(root.left), dfs(root.right) # get height of left and right subtrees
-            diameter = left + right # diameter will be height of left node plus height of right node plus 2 for the 2 edge that connects from node to left and right
+            diameter = left + right # diameter will be height of left node plus height of right node 
              
             nonlocal res
             res = max(res, diameter) # update res if curr diameter more than curr res
