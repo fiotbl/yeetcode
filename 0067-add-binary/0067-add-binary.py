@@ -1,14 +1,10 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        lena, lenb = len(a), len(b)
-        if lena > lenb:
-            b = "0"*(lena-lenb) + b
-        else:
-            a = "0"*(lenb-lena) + a
+        if len(a) > len(b): b = "0"*(len(a)-len(b)) + b
+        else: a = "0"*(len(b)-len(a)) + a
         
-        res = []
-        carry = False
-        print(lena)
+        res, carry = [], False
+
         for i in range(len(a) - 1, -1, -1):
             if carry:
                 bitsum = int(a[i]) + int(b[i]) + 1
