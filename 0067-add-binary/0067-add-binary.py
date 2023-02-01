@@ -7,15 +7,9 @@ class Solution:
 
         for i in range(len(a) - 1, -1, -1):
             bitsum = int(a[i]) + int(b[i]) + carry
-            if bitsum == 2:
-                carry = 1
-                res.append(0)
-            elif bitsum ==3:
-                carry = 1
-                res.append(1)
-            else: 
-                res.append(bitsum)
-                carry = 0
+            res.append(bitsum % 2)
+            if bitsum >=2: carry = 1
+            else: carry = 0
                 
-        if carry: res.append(1) 
+        if carry==1: res.append(1) 
         return "".join(str(a) for a in res[::-1] )
