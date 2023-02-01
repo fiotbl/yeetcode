@@ -7,8 +7,8 @@ class Solution:
 
         for i in range(len(a) - 1, -1, -1):
             bitsum = int(a[i]) + int(b[i]) + carry
-            res += str(bitsum % 2)
+            res = str(bitsum % 2) + res
             carry = bitsum // 2
                 
-        if carry==1: res += "1"
-        return res[::-1]
+        if carry==1: res = "1" + res
+        return res
