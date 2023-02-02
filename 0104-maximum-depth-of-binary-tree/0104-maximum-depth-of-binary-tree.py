@@ -11,8 +11,6 @@ class Solution:
             if not root: return 0
             left, right = dfs(root.left), dfs(root.right)
             depth = max(left, right)
-            
-
             return 1+depth
         
         return dfs(root)
