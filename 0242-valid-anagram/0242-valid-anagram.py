@@ -1,19 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        sDict = {}
-        tDict = {}
+        sDict = {e:s.count(e) for e in set(s)}
+        tDict = {e:t.count(e) for e in set(t)}       
         
-        for letter in s:
-            if letter not in sDict:
-                sDict[letter] = 1
-            else:
-                sDict[letter] += 1
-        
-        for letter in t:
-            if letter not in tDict:
-                tDict[letter] = 1
-            else:
-                tDict[letter] += 1
-                
-                
         return sDict == tDict
