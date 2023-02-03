@@ -8,7 +8,7 @@ class Solution:
         prev = None
         
         while head:
-            temp = head 
+            temp = head
             head = head.next
             temp.next = prev
             prev = temp
