@@ -14,7 +14,6 @@ class MyQueue:
         return self.list[0]
 
     def empty(self) -> bool:
-        
         return len(self.list)==0
 
 
