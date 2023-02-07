@@ -10,9 +10,8 @@ class Solution:
         
         for i in range(len(a)-1, -1, -1):
             total = carry + int(a[i]) + int(b[i])
-            value = total % 2
             carry = total // 2
-            res =  str(value) + res
+            res =  str(total % 2) + res
             
         if carry == 1: res = "1"+res 
         return res
