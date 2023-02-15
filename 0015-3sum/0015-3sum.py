@@ -4,7 +4,7 @@ class Solution:
         res = []
         
         for i, num in enumerate(nums):
-            if i>0 and num == nums[i-1]:
+            if i > 0 and num == nums[i-1]: # i > 0 for example case of [0,0,0]
                 continue
             target = 0 - num
             l, r = i + 1, len(nums) - 1
