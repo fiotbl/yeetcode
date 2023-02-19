@@ -7,5 +7,4 @@ class Solution:
             
             currSum += num
             res = max(res, currSum)
-            
         return res
