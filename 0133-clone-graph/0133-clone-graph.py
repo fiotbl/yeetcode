@@ -20,7 +20,7 @@ class Solution:
             visitedNodes[node] = copy
             
             for neighbor in node.neighbors:
-                copy.neighbors.append(dfs(neighbor))
+                copy.neighbors.append(dfs(neighbor)) 
             
             return copy
                 
