@@ -10,4 +10,3 @@ class Solution:
             maxValue = max(maxValue, currSum)
             
         return maxValue
-            
