@@ -10,15 +10,13 @@ class Solution:
         
         def bfs(root):
             if not root: return 0
-            leftHeight = bfs(root.left)
-            rightHeight = bfs(root.right)
-            height = max(leftHeight, rightHeight) + 1
+            leftHeight, rightHeight = bfs(root.left), bfs(root.right)
             diameter = leftHeight + rightHeight
             
             nonlocal res
             res = max(res, diameter)
             
-            return height
+            return max(leftHeight, rightHeight) + 1
         
         bfs(root)
         return res
