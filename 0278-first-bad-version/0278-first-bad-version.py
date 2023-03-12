@@ -8,10 +8,6 @@ class Solution:
         mid = (l + r) // 2
         
         while l<=r:
-            print("l", l)
-            print("r", l)
-            
-            print(mid)
             mid = (l + r) // 2
             ver = isBadVersion(mid)
             if not ver:
