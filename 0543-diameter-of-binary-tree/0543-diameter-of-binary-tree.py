@@ -8,14 +8,14 @@ class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         res = 0 
         
-        def bfs(root):
+        def dfs(root):
             if not root: return 0
-            leftHeight, rightHeight = bfs(root.left), bfs(root.right)
+            leftHeight, rightHeight = dfs(root.left), dfs(root.right)
             diameter = leftHeight + rightHeight
             nonlocal res
             res = max(res, diameter)
             
             return max(leftHeight, rightHeight) + 1
         
-        bfs(root)
+        dfs(root)
         return res
