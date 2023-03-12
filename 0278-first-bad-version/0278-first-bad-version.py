@@ -5,7 +5,6 @@ class Solution:
     def firstBadVersion(self, n: int) -> int:
         # binary search
         l, r = 1, n
-        mid = (l + r) // 2
         
         while l<=r:
             mid = (l + r) // 2
