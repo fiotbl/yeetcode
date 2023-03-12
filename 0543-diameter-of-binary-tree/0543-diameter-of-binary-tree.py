@@ -12,7 +12,6 @@ class Solution:
             if not root: return 0
             leftHeight, rightHeight = bfs(root.left), bfs(root.right)
             diameter = leftHeight + rightHeight
-            
             nonlocal res
             res = max(res, diameter)
             
