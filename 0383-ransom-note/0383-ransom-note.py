@@ -1,11 +1,11 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-                
         mDict = {e:magazine.count(e) for e in set(magazine)}
         
-        for s in ransomNote:
-            if s not in mDict or mDict[s]==0:
+        for letter in ransomNote:
+            if letter in mDict and mDict[letter]!=0:
+                mDict[letter] -= 1
+            else:
                 return False
-            else: mDict[s]-=1
-                
+        
         return True
