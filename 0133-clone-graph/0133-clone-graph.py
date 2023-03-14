@@ -10,19 +10,17 @@ class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         visitedNodes = {}
         
-        def dfs(node):
+        def clone(node):
             if not node: return
-            
             if node in visitedNodes:
                 return visitedNodes[node]
-
+            
             copy = Node(node.val)
             visitedNodes[node] = copy
             
             for neighbor in node.neighbors:
-                copy.neighbors.append(dfs(neighbor)) 
-            
+                copy.neighbors.append(clone(neighbor))
+                
             return copy
                 
-        return dfs(node)
-        
+        return clone(node)
