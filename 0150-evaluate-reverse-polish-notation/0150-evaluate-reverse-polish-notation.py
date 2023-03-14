@@ -5,8 +5,7 @@ class Solution:
         
         for token in tokens:
             if token in operators:
-                num1 = stack.pop()
-                num2 = stack.pop()
+                num1, num2 = stack.pop(), stack.pop()
                 res = eval(str(num2) + token + str(num1))
                 stack.append(int(res))
             else:
