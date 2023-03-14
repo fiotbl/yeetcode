@@ -12,7 +12,7 @@ class Solution:
                 else:
                     up = 10**999
                 mat[i][j] = min(left, up) + 1
-        print(mat)
+
         for i in range(len(mat) - 1, -1, -1):
             for j in range(len(mat[0]) - 1, -1, -1):
                 if mat[i][j] == 0: continue
