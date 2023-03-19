@@ -24,6 +24,5 @@ class Solution:
                     grid[r][c] = 2
                     rotten.append((r,c))      
                     fresh -= 1
-            
 
         return -1 if fresh > 0 else count
