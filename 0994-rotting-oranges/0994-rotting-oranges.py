@@ -12,7 +12,8 @@ class Solution:
                     fresh += 1
                     
         directions = [[0, 1], [0, -1], [1,0], [-1,0]]
-        while rotten:
+        while rotten and fresh > 0:
+            print(rotten)
             count += 1
             rottenLen = len(rotten)
             for i in range(rottenLen):
@@ -23,7 +24,6 @@ class Solution:
                     grid[r][c] = 2
                     rotten.append((r,c))      
                     fresh -= 1
-                    
             
-        if fresh > 0: return -1
-        return count-1 if count>0 else 0
+
+        return -1 if fresh > 0 else count
