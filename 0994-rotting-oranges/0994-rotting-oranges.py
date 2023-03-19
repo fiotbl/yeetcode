@@ -10,7 +10,6 @@ class Solution:
             if (i,j) not in rotten:
                 rotten.append((i,j))      
             
-
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if grid[i][j] == 2:
