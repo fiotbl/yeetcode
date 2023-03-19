@@ -14,21 +14,16 @@ class Solution:
         directions = [[0, 1], [0, -1], [1,0], [-1,0]]
         while rotten:
             count += 1
-            print(rotten)
             rottenLen = len(rotten)
             for i in range(rottenLen):
                 row, col = rotten.pop(0)
                 for dr, dc in directions:
                     r, c = dr+row, dc+col
-                    print(r,c)
                     if r<0 or r>=len(grid) or c<0 or c>=len(grid[0]) or grid[r][c] == 0  or grid[r][c] == 2: continue
                     grid[r][c] = 2
                     rotten.append((r,c))      
                     fresh -= 1
-                    print(fresh)
                     
             
-        if fresh > 0: 
-            print("erg")
-            return -1
+        if fresh > 0: return -1
         return count-1 if count>0 else 0
