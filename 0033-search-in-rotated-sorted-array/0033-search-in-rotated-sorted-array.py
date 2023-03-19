@@ -2,11 +2,10 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums) - 1
         
-        while l <= r:
+        while l<=r:
             mid = (l+r) // 2
             if nums[mid] == target: return mid
-            
-            # first check if left side if the strictly increasing side
+            # check which is the strictly increasing side
             
             if nums[mid] >= nums[l]:
                 if nums[mid] >= target and nums[l] <= target:
@@ -18,5 +17,6 @@ class Solution:
                     l = mid + 1
                 else:
                     r = mid - 1
-            
+        
         return -1
+                
