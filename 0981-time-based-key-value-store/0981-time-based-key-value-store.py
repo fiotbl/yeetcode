@@ -19,7 +19,6 @@ class TimeMap:
             mid = (l+r) // 2
             if values[mid][1] <= timestamp:
                 res = values[mid][0]
-                print(res)
                 l = mid + 1
             else:
                 r = mid - 1
