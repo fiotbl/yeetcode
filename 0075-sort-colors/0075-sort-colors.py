@@ -3,21 +3,22 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        red = 0
-        white = 0 
-        blue = len(nums)-1
         
-        while white <= blue:
-            if nums[white] == 0:
-                nums[white], nums[red] = nums[red], nums[white]
-                white += 1
-                red += 1
-            elif nums[white] == 1:
-                white += 1
-            else:
-                nums[white], nums[blue] = nums[blue], nums[white]
-                blue -= 1
+        l, r = 0, len(nums) - 1
+        i = 0
         
-            
-
-                
+        def swap(i, j):
+            tmp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = tmp
+        
+        while i <= r:
+            if nums[i] == 0:
+                swap(i, l)
+                l += 1
+            elif nums[i] == 2:
+                swap(i, r)
+                r -= 1
+                i -= 1
+            i += 1
+    
