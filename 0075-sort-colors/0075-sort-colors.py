@@ -3,10 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        
-        l, r = 0, len(nums) - 1
+        l, r = 0, len(nums)-1
         i = 0
-        
         def swap(i, j):
             tmp = nums[i]
             nums[i] = nums[j]
@@ -21,4 +19,4 @@ class Solution:
                 r -= 1
                 i -= 1
             i += 1
-    
+            
