@@ -9,12 +9,12 @@ class Solution:
                 return
             
             # include the curr num
+            dfs(i+1)
             subset.append(nums[i])
             dfs(i+1)
             
             # don't include the curr num
             subset.pop()
-            dfs(i+1) 
             
         dfs(0)
         return res
