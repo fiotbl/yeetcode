@@ -9,9 +9,9 @@ class Solution:
                 visited.add((i,j))
                 m += 1
                 curString += (board[i][j])
-                if dfs(i-1, j, curString, m) or dfs(i+1, j, curString,  m) or dfs(i, j+1, curString,  m) or dfs(i, j-1, curString, m): return True
+                res = dfs(i-1, j, curString, m) or dfs(i+1, j, curString,  m) or dfs(i, j+1, curString,  m) or dfs(i, j-1, curString, m)
                 visited.remove((i,j))
-            return False
+            return res
         
         for i in range(len(board)):
             for j in range(len(board[0])):
