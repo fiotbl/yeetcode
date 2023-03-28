@@ -2,7 +2,6 @@ class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         visited = set()
         def dfs(i, j, curString, m):
-            # print(curString)
             if len(visited) == len(word): return True
             if i<0 or j<0 or i>=len(board) or j>=len(board[0]) or (i,j) in visited or board[i][j] != word[m]: return False
             if board[i][j] == word[m]:
