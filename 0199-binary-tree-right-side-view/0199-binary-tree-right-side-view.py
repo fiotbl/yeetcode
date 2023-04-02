@@ -9,7 +9,7 @@ class Solution:
         res = []
         queue = [root]
                   
-        while queue:
+        while any(queue):
             qLen = len(queue)
             rightNode = None
             for i in range(qLen):
@@ -18,8 +18,7 @@ class Solution:
                     rightNode = node
                     queue.append(rightNode.left)
                     queue.append(rightNode.right)
-            if rightNode:
-                res.append(rightNode.val)
+            res.append(rightNode.val)
             
         return res            
             
