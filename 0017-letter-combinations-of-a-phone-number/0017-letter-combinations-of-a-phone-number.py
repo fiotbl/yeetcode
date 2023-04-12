@@ -13,7 +13,7 @@ class Solution:
         
         res = []
         def backtrack(i, curStr):
-            if len(curStr) == len(digits):
+            if i == len(digits):
                 res.append(curStr)
                 return
             for c in digitToLetter[digits[i]]:
