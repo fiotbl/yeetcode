@@ -1,6 +1,6 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        # boyer - moore algorithm
+                # boyer - moore algorithm
         
         count, res = 0, 0
         
