@@ -3,15 +3,14 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        # binary search
-        l, r = 1, n
+        l, r = 0, n
         
         while l<=r:
-            mid = (l + r) // 2
-            ver = isBadVersion(mid)
-            if not ver:
+            mid = (l+r)//2
+            if isBadVersion(mid): 
+                r = mid-1
+            else:
                 l = mid + 1
-            if ver:
-                r = mid - 1
+        
         return l
             
