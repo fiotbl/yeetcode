@@ -1,10 +1,13 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
-        memo = {0:0, 1:1, 2:1}
+        dict = {}
         
-        def recursion(n):
-            if n in memo: return memo[n]
-            memo[n] = recursion(n-3) + recursion(n-2) + recursion(n-1)
-            return memo[n]
+        def memo(n):
+            if n == 0: return 0
+            if n == 1: return 1
+            if n == 2: return 1
+            if n in dict: return dict[n]
+            else: dict[n] = memo(n-1) + memo(n-2) + memo(n-3)
+            return dict[n]
         
-        return recursion(n)
+        return memo(n)
