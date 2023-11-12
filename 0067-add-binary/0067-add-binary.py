@@ -1,17 +1,15 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
         if len(a) < len(b):
-            a = "0"*(len(b) - len(a)) + a
-        else:
-            b = "0"*(len(a) - len(b)) + b
-            
-        carry = 0
-        res = ""
-        for i in range(len(a)-1,-1,-1):
-            addition = carry + int(a[i]) + int(b[i])
-            ans = addition % 2
-            carry = addition // 2
-            res = str(ans) + str(res)
-            
-        return res if carry == 0 else "1"+res
-            
+            a = "0" * (len(b) - len(a)) + a
+        else: 
+            b = "0" * (len(a) - len(b)) + b
+        
+        res, carry, total = "", 0, 0
+        
+        for i in range(len(a)-1, -1, -1):
+            total = (carry + int(a[i]) + int(b[i])) % 2
+            carry = (carry + int(a[i]) + int(b[i])) // 2
+            res = str(total) + res
+        
+        return "1"+res if carry==1 else res
