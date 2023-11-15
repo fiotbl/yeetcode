@@ -1,6 +1,6 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        dic = {e:nums.count(e) for e in set(nums)}
+        dic = collections.Counter(nums)
         h = []
         for key in dic:
             heapq.heappush(h, tuple([-dic[key], key]))
