@@ -3,10 +3,14 @@ class Solution:
         dic = collections.Counter(nums)
         h = []
         for key in dic:
-            heapq.heappush(h, tuple([-dic[key], key]))
+            heapq.heappush(h, tuple([dic[key], key]))
         
         res = []
-        for _ in range(k):
-            res.append(heapq.heappop(h)[1])
+        # for _ in range(k):
+        #     res.append(heapq.heappop(h)[1])
+        
+        tmp = heapq.nlargest(k, h)
+        for i in tmp:
+            res.append(i[1])
             
         return res
