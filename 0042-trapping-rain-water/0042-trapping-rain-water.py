@@ -14,10 +14,8 @@ class Solution:
             if height[l] < height[r]:
                 l += 1
                 curr = l
-                # maxL = max(maxL, height[l])
             else:
                 r -= 1
                 curr = r
-                # maxR = max(maxR, height[r])
             
         return res
