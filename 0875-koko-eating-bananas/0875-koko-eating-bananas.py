@@ -8,7 +8,6 @@ class Solution:
             total = 0
             for pile in piles:
                 total += math.ceil(pile/mid)
-            print(total)
             if total <= h: 
                 res = mid
                 r = mid-1
