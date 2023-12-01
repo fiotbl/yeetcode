@@ -22,7 +22,7 @@ class Solution:
                     return curr
                 else:
                     prev.next = curr.next
-                break
+                    break
             else:
                 prev = curr
                 curr = curr.next
