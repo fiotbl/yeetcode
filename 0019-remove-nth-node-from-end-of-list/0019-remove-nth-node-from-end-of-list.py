@@ -15,6 +15,9 @@ class Solution:
         curr = head
         i = 0
         prev = None
+        
+        if count - n == 0:
+            return curr.next
         while curr:
             if i == (count - n):
                 if not prev:
