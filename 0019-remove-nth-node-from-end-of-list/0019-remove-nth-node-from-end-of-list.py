@@ -18,6 +18,7 @@ class Solution:
         
         if count - n == 0:
             return curr.next
+        
         while curr:
             if i == (count - n):
                 prev.next = curr.next
