@@ -20,12 +20,8 @@ class Solution:
             return curr.next
         while curr:
             if i == (count - n):
-                if not prev:
-                    curr = curr.next
-                    return curr
-                else:
-                    prev.next = curr.next
-                    break
+                prev.next = curr.next
+                break
             else:
                 prev = curr
                 curr = curr.next
