@@ -3,20 +3,20 @@ class Solution:
         res = []
         stack = []
         
-        def backtrack(numL, numR):
-            if numL == numR == n:
-                res.append("".join(stack))
+        def backtrack(L, R):
+            if L == R == n:
+                res.append(''.join(stack))
                 return
             
-            if numL < n:
+            if L < n:
                 stack.append("(")
-                backtrack(numL + 1, numR)
+                backtrack(L+1 , R)
                 stack.pop()
-            
-            if numR < numL:
+                
+            if R < L:
                 stack.append(")")
-                backtrack(numL, numR + 1)
+                backtrack(L , R+1)
                 stack.pop()
-            
-        backtrack(0,0)
+                
+        backtrack(0, 0)
         return res
