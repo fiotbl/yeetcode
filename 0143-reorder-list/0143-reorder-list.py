@@ -8,31 +8,34 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        # first find the middle using slow and fast
-        slow, fast = head, head.next
+        slow = head
+        fast = head.next
+        
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        
-        # next reverse second linked list
-        curr = slow.next
-        prev = slow.next = None
 
+        curr = slow.next
+        slow.next = None
+        prev = None
+        
         while curr:
-            tmp = curr.next
-            curr.next = prev
+            nxt = curr.next
+            curr.next = prev 
             prev = curr
-            curr = tmp
-        
-        # merge two linked 
-        first, snd = head, prev
-        while snd:
-            tmp = first.next
-            tmp2 = snd.next
-            first.next = snd 
-            snd.next = tmp
-            first, snd = tmp, tmp2
+            curr = nxt
             
-        
-        
-        
+        curr = head      
+        while curr and prev:
+            tmp = curr.next
+            tmp2 = prev.next
+            curr.next = prev
+            prev.next = tmp
+            prev = tmp2
+            curr = tmp
+            
+            
+            
+            
+            
+            
