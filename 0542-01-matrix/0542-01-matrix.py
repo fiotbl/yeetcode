@@ -25,6 +25,7 @@ class Solution:
                 else:
                     down = 10**999
                     
+                    
                 mat[i][j] = min(min(right, down) + 1, mat[i][j])
         
         return mat
