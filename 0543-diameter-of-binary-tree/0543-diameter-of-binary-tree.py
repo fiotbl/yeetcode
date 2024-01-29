@@ -16,7 +16,7 @@ class Solution:
             right = dfs(root.right)
             res = max(res, left+right)
             
-            return 1 + max(left,right)
+            return max(1+left,1+right)
         
         dfs(root)
         return res
