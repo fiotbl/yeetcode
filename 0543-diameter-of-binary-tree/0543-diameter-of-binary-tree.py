@@ -8,15 +8,15 @@ class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         res = 0
         
-        def dfs(n):
-            if not n: return 0
-            left, right = dfs(n.left), dfs(n.right)
-            height = max(left, right) + 1
+        def dfs(root):
+            if not root: return 0
+            nonlocal res
             
-            nonlocal res 
-            if left+right > res:
-                res = left+right
-            return height
-                
+            left = dfs(root.left)
+            right = dfs(root.right)
+            res = max(res, left+right)
+            
+            return 1 + max(left,right)
+        
         dfs(root)
         return res
