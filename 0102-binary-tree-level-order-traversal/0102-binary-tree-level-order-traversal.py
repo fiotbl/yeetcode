@@ -6,17 +6,21 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        queue = [root] if root else []
-        res =[]
+        res = []
+        stack = []
+        if root: stack.append(root)
         
-        while queue:
-            tmp = []
-            for i in range(len(queue)):
-                curr = queue.pop(0)
-                if curr.left: queue.append(curr.left)
-                if curr.right: queue.append(curr.right)
-                tmp.append(curr.val)
-            res.append(tmp)
-            
+        while stack:
+            length = len(stack)
+            ans = []
+            for _ in range(length):
+                curr = stack.pop(0)
+                if curr:
+                    if curr.left:
+                        stack.append(curr.left)
+                    if curr.right:
+                        stack.append(curr.right)
+                    ans.append(curr.val)
+            res.append(ans)
+        
         return res
-        
