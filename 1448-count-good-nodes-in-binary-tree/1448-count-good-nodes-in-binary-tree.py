@@ -19,7 +19,7 @@ class Solution:
             dfs(root.left, currMax)
             dfs(root.right, currMax)
         
-        dfs(root, -10000000000000000000)
+        dfs(root, -10**5)
         
         return total
         
