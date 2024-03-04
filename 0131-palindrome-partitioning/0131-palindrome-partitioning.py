@@ -1,26 +1,25 @@
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         res = []
-        palins = []
+        part = []
         
         def dfs(i):
-            if i >= len(s):
-                res.append(palins.copy())
+            if i == len(s):
+                res.append(part.copy())
                 return
+            
             for j in range(i, len(s)):
-                if self.isPalin(s, i, j):
-                    palins.append(s[i:j+1])
+                if self.isPali(i, j, s):
+                    part.append(s[i:j+1])
                     dfs(j+1)
-                    palins.pop()
+                    part.pop()
+        
         dfs(0)
         return res
     
-    def isPalin(self, s, l, r):
-        while l<r:
-            if s[l] != s[r]:
+    def isPali(self, i, j, s):
+        while i<=j:
+            if s[i] != s[j]:
                 return False
-            l += 1
-            r -= 1
-            
+            i, j = i+1, j-1
         return True
-                
