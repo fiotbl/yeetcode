@@ -21,5 +21,5 @@ class KthLargest:
 # param_1 = obj.add(val)
 
 
-# 2 3 4 5 8 len = 5 - 3 = 2
+# 2 3 4 5 8    len = 5 - 3 = 2
 # 2 3 4 5 5 8  len = 6 - 3
