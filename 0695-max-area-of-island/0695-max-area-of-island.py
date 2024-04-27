@@ -6,7 +6,6 @@ class Solution:
         def bfs(i,j):
             if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] == 0 or (i,j) in visited: return 0    
             visited.append((i,j))
-            
             return 1 + bfs(i-1,j) + bfs(i+1,j) + bfs(i,j-1) + bfs(i, j+1)
         
         area = 0
