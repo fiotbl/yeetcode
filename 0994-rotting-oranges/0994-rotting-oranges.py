@@ -1,28 +1,28 @@
 class Solution:
-    def orangesRotting(self, grid: List[List[int]]) -> int:        
-        rotten = []
-        count = 0
+    def orangesRotting(self, grid: List[List[int]]) -> int:
         fresh = 0
-            
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == 2:
-                    rotten.append((i,j))
-                elif grid[i][j] == 1:
-                    fresh += 1
-                    
-        directions = [[0, 1], [0, -1], [1,0], [-1,0]]
-        while rotten and fresh > 0:
-            print(rotten)
-            count += 1
-            rottenLen = len(rotten)
-            for i in range(rottenLen):
-                row, col = rotten.pop(0)
-                for dr, dc in directions:
-                    r, c = dr+row, dc+col
-                    if r<0 or r>=len(grid) or c<0 or c>=len(grid[0]) or grid[r][c] == 0  or grid[r][c] == 2: continue
-                    grid[r][c] = 2
-                    rotten.append((r,c))      
-                    fresh -= 1
+        time = 0
+        q = []
 
-        return -1 if fresh > 0 else count
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                if grid[r][c] == 1:
+                    fresh += 1
+                elif grid[r][c] == 2:
+                    q.append((r,c))
+          
+        dirs = [[1, 0], [0, 1], [-1,0], [0, -1]]
+        while q and fresh > 0:
+            lenQ = len(q)
+            for i in range(lenQ):
+                r, c = q.pop(0)
+                for dirR, dirC in dirs:
+                    r1, c1 = r + dirR, c + dirC
+                    if r1 in range(len(grid)) and c1 in range(len(grid[0])) and grid[r1][c1] == 1:
+                        grid[r1][c1] = 2
+                        fresh -= 1
+                        q.append((r1,c1))
+            time += 1
+        
+        return time if fresh == 0 else -1
+                
