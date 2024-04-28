@@ -1,36 +1,26 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        preMap = {i:[] for i in range(numCourses)}
+        maps = {i: [] for i in range(numCourses)}
+        for prereq, course in prerequisites:
+            maps[prereq].append(course)
         
-        for course, prereq in prerequisites:
-            preMap[course].append(prereq)
-            
-        visitedCourses = []
-        
+        visited = set()
         def dfs(course):
-            print("course", course)
-            if course in visitedCourses: return False
-            if preMap[course] == []: 
-                print("empty prereqs")
+            if course in visited:
+                return False
+            if maps[course] == []:
                 return True
             
-            visitedCourses.append(course)
-            for crs in preMap[course]:
-                print(course, "has a prereq of" , crs)
-                if not dfs(crs): return False
-            print("course", course)
-                
-            print("checked all its decendents")
-            visitedCourses.remove(course)
-            preMap[course] = []
+            visited.add(course)
+            for prereq in maps[course]:
+                if not dfs(prereq): return False
+            maps[course] = []
+            visited.remove(course)
             
             return True
         
-        for course in range(numCourses):
-            if not dfs(course): return False
-            
-        return True
-            
-            
+        for i in range(numCourses):
+            if not dfs(i): return False
         
+        return True
         
