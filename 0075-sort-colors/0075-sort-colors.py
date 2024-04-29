@@ -8,16 +8,15 @@ class Solution:
         
         while i<=r:
             if nums[i] == 2:
-                tmp = nums[r] 
-                nums[r] = 2
+                tmp = nums[r]
+                nums[r] = nums[i]
                 nums[i] = tmp
                 r -= 1
-                i -= 1
             elif nums[i] == 0:
-                tmp = nums[l] 
-                nums[l] = 0
+                tmp = nums[l]
+                nums[l] = nums[i]
                 nums[i] = tmp
-                l += 1
-            i += 1
-            
-            
+                l+=1
+                i+=1
+            else: i+=1
+        return nums
