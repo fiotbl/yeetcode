@@ -24,7 +24,8 @@ class Solution:
             maps[i].remove(j)
             maps[j].remove(i)
             visited = set()
-            if isTree(1, -1) and len(visited) == len(edges): 
+
+            if isTree(1, -1) and len(visited) == len(edges):
                 res = [i,j]
             maps[i].append(j)
             maps[j].append(i)
