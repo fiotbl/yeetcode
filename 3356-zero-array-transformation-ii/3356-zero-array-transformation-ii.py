@@ -19,10 +19,10 @@ class Solution:
         
         l, r = 0, len(queries) + 1
         
-        while l<r:
+        while l<=r:
             mid = (l+r)//2
             if find(mid):
-                r = mid 
+                r = mid - 1
             else:
                 l = mid + 1
                 
