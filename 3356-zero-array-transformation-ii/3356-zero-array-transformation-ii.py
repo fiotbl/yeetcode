@@ -19,11 +19,9 @@ class Solution:
             return True
         
         l, r = 0, len(queries) 
-        res = 0
         while l<=r:
             mid = (l+r)//2
             if find(mid):
-                res = mid
                 r = mid - 1
             else:
                 l = mid + 1
