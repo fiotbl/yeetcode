@@ -7,8 +7,8 @@ class Solution:
         
         counts = [save[0]]
         
-        for s in save[1:]:
-            counts.append(counts[-1] + s)
+        for i in range(1, len(save)):
+            counts.append(counts[i-1]+save[i])
         
         res = 0
         for i in range(len(counts)-k):                                                            
