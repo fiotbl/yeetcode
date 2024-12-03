@@ -11,7 +11,7 @@ class Solution:
             counts.append(counts[i-1]+save[i])
         
         res = 0
-        for i in range(len(counts)-k):                                                            
+        for i in range(len(counts)):                                                            
             l = max(0, i-k-1)
             r = min(len(counts)-1, i+k)
             numCounts = save[i]
