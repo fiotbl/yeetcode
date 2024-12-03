@@ -1,6 +1,6 @@
 class Solution:
     def maxFrequency(self, nums: List[int], k: int, numOperations: int) -> int:
-        save = [0] * (max(nums)+1+k)
+        save = [0] * (max(nums)+1)
         
         for num in nums:
             save[num] += 1
@@ -23,3 +23,4 @@ class Solution:
                 res = max(res, changes+numCounts)
             
         return res
+    
