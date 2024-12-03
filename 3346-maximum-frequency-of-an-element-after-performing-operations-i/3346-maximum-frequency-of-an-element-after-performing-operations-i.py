@@ -9,7 +9,7 @@ class Solution:
         
         for i in range(1, len(save)):
             counts.append(counts[i-1]+save[i])
-        
+
         res = 0
         for i in range(len(counts)):                                                            
             l = max(0, i-k-1)
